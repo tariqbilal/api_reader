@@ -40,7 +40,9 @@ class GetList extends Command
     public function handle()
     {
     	$url = 'https://api.coingecko.com/api/v3/coins/list?include_platform=true';
-		$response = Http::get($url);
+		// memic the api call with the token provided
+    	$response = Http::withHeaders(['x_cg_pro_api_key' => 'CG-aZv3t7axTUZjS7MWnsupJs3K'])
+			->get($url);
 		$data = json_decode($response->getBody()->getContents());
 		foreach($data as $key => $value)
 		{

@@ -11,3 +11,4 @@
 This document will provide details of running the app to parse all the data from coin gecko api.
 
 - php artisan migrate:refresh --seed
+- php artisan get:list
